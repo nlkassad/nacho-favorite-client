@@ -3,7 +3,7 @@
 const showReviewsTemplate = require('../templates/review-listing.handlebars');
 
 const getReviewsSuccess = (reviews) => {
-  $('#content').append(showReviewsTemplate({reviews}));
+  $('#content').html(showReviewsTemplate(reviews));
   // $('#content').append(showReviewsTemplate({reviews}));
 
   console.log(reviews);
