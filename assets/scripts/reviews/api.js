@@ -10,6 +10,15 @@ let getReviews = function(){
   });
 };
 
+let getMyReviews = function(){
+  return $.ajax({
+    url: app.host + "/reviews", // "http://book-json.herokuapp.com/books"
+    method: 'GET',
+    // dataType: 'json'
+  });
+};
+
 module.exports = {
   getReviews,
+  getMyReviews,
 };

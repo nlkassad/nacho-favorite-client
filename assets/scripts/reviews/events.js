@@ -10,6 +10,13 @@ const onGetReviews = (event) => {
   .fail(ui.failure);
 };
 
+const onGetMyReviews = (event) => {
+  event.preventDefault();
+  api.getMyReviews()
+  .done(ui.getMyReviewsSuccess)
+  .fail(ui.failure);
+};
+
 const onClearReviews = (event) => {
   event.preventDefault();
   ui.clearReviews();
@@ -17,6 +24,7 @@ const onClearReviews = (event) => {
 
 const addHandlers = () => {
   $('#getReviewsButton').on('click', onGetReviews);
+  $('#getMyReviewsButton').on('click', onGetMyReviews);
   $('#clearReviewsButton').on('click', onClearReviews);
 };
 
