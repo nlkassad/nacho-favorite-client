@@ -15,6 +15,11 @@ const onDisplaySignIn = (event) => {
   ui.displaySignInSuccess();
 };
 
+const onDisplayChangePassword = (event) => {
+  event.preventDefault();
+  ui.displayChangePasswordSuccess();
+};
+
 const onSignUp = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -49,14 +54,21 @@ const onChangePassword = (event) => {
 
 
 const addHandlers = () => {
-  $('#display-sign-up').on('click', onDisplaySignUp);
-  $('#display-sign-in').on('click', onDisplaySignIn);
-  $('#entry').on('submit','#sign-up', onSignUp);
+  // $('#display-sign-up').on('click', onDisplaySignUp);
+  // $('#display-sign-in').on('click', onDisplaySignIn);
+  $('#control').on('click', '#display-sign-up', onDisplaySignUp);
+  $('#control').on('click', '#display-sign-in', onDisplaySignIn);
   // $('#sign-up').on('submit', onSignUp);
+  $('#entry').on('submit','#sign-up', onSignUp);
   $('#entry').on('submit','#sign-in', onSignIn);
+  $('#entry').on('submit','#change-password', onChangePassword);
   // $('#sign-in').on('submit', onSignIn);
-  $('#sign-out').on('submit', onSignOut);
-  $('#change-password').on('submit', onChangePassword);
+  // $('#sign-out').on('submit', onSignOut);
+  $('#control').on('click','#sign-out', onSignOut);
+  $('#control').on('click','#display-change-password', onDisplayChangePassword);
+  // $('#change-password').on('submit', onChangePassword);
+
+
 };
 //
 module.exports = {
