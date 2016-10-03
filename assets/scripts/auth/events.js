@@ -1,16 +1,26 @@
 'use strict';
 //
-const getFormFields = require('../../../lib/get-form-fields');
+const getFormFields = require('../../../lib/get-form-fields.js');
 
 const api = require('./api');
 const ui = require('./ui');
 
+const onDisplaySignUp = (event) => {
+  event.preventDefault();
+  ui.displaySignUpSuccess();
+};
+
+const onDisplaySignIn = (event) => {
+  event.preventDefault();
+  ui.displaySignInSuccess();
+};
 
 const onSignUp = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
+  console.log(data);
   api.signUp(data)
-  .done(ui.success)
+  .done(ui.signUpSuccess)
   .fail(ui.failure);
 };
 
@@ -39,8 +49,12 @@ const onChangePassword = (event) => {
 
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp);
-  $('#sign-in').on('submit', onSignIn);
+  $('#display-sign-up').on('click', onDisplaySignUp);
+  $('#display-sign-in').on('click', onDisplaySignIn);
+  $('#entry').on('submit','#sign-up', onSignUp);
+  // $('#sign-up').on('submit', onSignUp);
+  $('#entry').on('submit','#sign-in', onSignIn);
+  // $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
 };

@@ -23,9 +23,12 @@ const onClearReviews = (event) => {
 };
 
 const addHandlers = () => {
-  $('#getReviewsButton').on('click', onGetReviews);
-  $('#getMyReviewsButton').on('click', onGetMyReviews);
-  $('#clearReviewsButton').on('click', onClearReviews);
+  $('#control').on('click','#getReviewsButton', onGetReviews);
+  // $('#getReviewsButton').on('click', onGetReviews);
+  $('#control').on('click','#getMyReviewsButton', onGetMyReviews);
+  // $('#getMyReviewsButton').on('click', onGetMyReviews);
+  $('#control').on('click','#clearReviewsButton', onClearReviews);
+  // $('#clearReviewsButton').on('click', onClearReviews);
 };
 
 module.exports = {
