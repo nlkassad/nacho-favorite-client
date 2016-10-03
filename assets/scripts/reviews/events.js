@@ -10,6 +10,11 @@ const onDisplayCreateNewReview = (event) => {
   ui.displayCreateNewReviewSuccess();
 };
 
+const onDisplayFindReview = (event) => {
+  event.preventDefault();
+  ui.displayFindReviewSuccess();
+};
+
 const onGetReviews = (event) => {
   event.preventDefault();
   api.getReviews()
@@ -38,6 +43,15 @@ const onCreateNewReview = (event) => {
   .fail(ui.failure);
 };
 
+const onFindReview = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
+  api.findReview(data)
+  .done(ui.findReviewSuccess)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#control').on('click','#getReviewsButton', onGetReviews);
   // $('#getReviewsButton').on('click', onGetReviews);
@@ -46,7 +60,10 @@ const addHandlers = () => {
   $('#control').on('click','#clearReviewsButton', onClearReviews);
   // $('#clearReviewsButton').on('click', onClearReviews);
   $('#control').on('click','#display-create-new-review', onDisplayCreateNewReview);
+  $('#control').on('click','#display-find-review', onDisplayFindReview);
+
   $('#entry').on('submit','#create-new-review', onCreateNewReview);
+  $('#entry').on('submit','#find-review', onFindReview);
 };
 
 module.exports = {

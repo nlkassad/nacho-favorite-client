@@ -26,8 +26,19 @@ const createNewReview = (data) => {
   });
 };
 
+const findReview = (data) => {
+  let item_search = data.menu_item.id;
+  console.log(item_search);
+  return $.ajax({
+    url: app.host + '/menu_items/' + item_search,
+    method: "get",
+    data: data,
+  });
+};
+
 module.exports = {
   getReviews,
   getMyReviews,
   createNewReview,
+  findReview
 };
