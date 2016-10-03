@@ -5,6 +5,7 @@ const showMyReviewsTemplate = require('../templates/my-review-listing.handlebars
 
 const getReviewsSuccess = (reviews) => {
   $('#content').html(showReviewsTemplate(reviews));
+  $('#entry').html("");
   // $('#content').append(showReviewsTemplate({reviews}));
 
   console.log(reviews);
@@ -12,6 +13,7 @@ const getReviewsSuccess = (reviews) => {
 
 const getMyReviewsSuccess = (reviews) => {
   $('#content').html(showMyReviewsTemplate(reviews));
+  $('#entry').html("");
   // $('#content').append(showReviewsTemplate({reviews}));
 
   console.log(reviews);
@@ -19,6 +21,7 @@ const getMyReviewsSuccess = (reviews) => {
 
 const clearReviews = () => {
   $('#content').html("");
+  $('#entry').html("");
 };
 
 const failure = (error) => {
