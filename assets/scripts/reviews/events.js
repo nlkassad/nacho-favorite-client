@@ -52,6 +52,24 @@ const onFindReview = (event) => {
   .fail(ui.failure);
 };
 
+const onDisplayEditReview = (event) => {
+  event.preventDefault();
+  // $(event.target).after("Edit");
+  let data = event.target;
+  console.log(data);
+  ui.displayEditReviewSuccess(data);
+};
+
+const onEditReview = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  let data_id = event.target.name;
+  console.log(data, data_id);
+  api.editReview(data, data_id)
+  .done(ui.editReviewSuccess)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#control').on('click','#getReviewsButton', onGetReviews);
   // $('#getReviewsButton').on('click', onGetReviews);
@@ -64,6 +82,8 @@ const addHandlers = () => {
 
   $('#entry').on('submit','#create-new-review', onCreateNewReview);
   $('#entry').on('submit','#find-review', onFindReview);
+  $('#content').on('click','.display-edit-review', onDisplayEditReview);
+  $('#content').on('submit','.edit-review', onEditReview);
 };
 
 module.exports = {

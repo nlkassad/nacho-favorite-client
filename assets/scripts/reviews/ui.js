@@ -6,6 +6,8 @@ const displayCreateNewReview = require('../templates/display-create-new-review.h
 const showNewReview = require('../templates/new-review.handlebars');
 const displayFindReview = require('../templates/display-find-review.handlebars');
 const showReview = require('../templates/show-review.handlebars');
+const displayEditReview = require('../templates/display-edit-review.handlebars');
+
 
 
 const displayCreateNewReviewSuccess = () => {
@@ -55,10 +57,28 @@ const findReviewSuccess = (review) => {
   $('#entry').html("");
 };
 
+const displayEditReviewSuccess = (data) => {
+  // app.user = data.user;
+  let data_id = data.id;
+  console.log(data);
+  console.log(data_id);
+  $(data).after(displayEditReview({data_id}));
+  // $('#entry').html("");
+};
+
+const editReviewSuccess = (review) => {
+  // app.user = data.user;
+  console.log(review);
+  $('#notification').html("Review Created" + showNewReview(review));
+  $('#entry').html("");
+};
+
 module.exports = {
   displayCreateNewReviewSuccess,
   displayFindReviewSuccess,
+  displayEditReviewSuccess,
   createNewReviewSuccess,
+  editReviewSuccess,
   findReviewSuccess,
   getReviewsSuccess,
   getMyReviewsSuccess,

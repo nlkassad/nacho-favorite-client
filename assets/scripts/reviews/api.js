@@ -31,7 +31,17 @@ const findReview = (data) => {
   console.log(item_search);
   return $.ajax({
     url: app.host + '/menu_items/' + item_search,
-    method: "get",
+    method: "GET",
+    data: data,
+  });
+};
+
+const editReview = (data, data_id) => {
+  let review_id = data_id;
+  console.log(review_id);
+  return $.ajax({
+    url: app.host + '/reviews/' + review_id,
+    method: "PATCH",
     data: data,
   });
 };
@@ -40,5 +50,6 @@ module.exports = {
   getReviews,
   getMyReviews,
   createNewReview,
+  editReview,
   findReview
 };
