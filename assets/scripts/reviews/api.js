@@ -18,7 +18,16 @@ let getMyReviews = function(){
   });
 };
 
+const createNewReview = (data) => {
+  return $.ajax({
+    url: app.host + '/reviews',
+    method: "POST",
+    data: data,
+  });
+};
+
 module.exports = {
   getReviews,
   getMyReviews,
+  createNewReview,
 };
