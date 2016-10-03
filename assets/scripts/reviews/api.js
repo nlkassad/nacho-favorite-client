@@ -46,10 +46,20 @@ const editReview = (data, data_id) => {
   });
 };
 
+const deleteReview = (data_id) => {
+  let review_id = data_id;
+  console.log(review_id);
+  return $.ajax({
+    url: app.host + '/reviews/' + review_id,
+    method: "DELETE",
+  });
+};
+
 module.exports = {
   getReviews,
   getMyReviews,
   createNewReview,
   editReview,
-  findReview
+  findReview,
+  deleteReview
 };

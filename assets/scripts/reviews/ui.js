@@ -80,6 +80,14 @@ const editReviewSuccess = (review) => {
   $('#content').html("");
 };
 
+const deleteReviewSuccess = (review) => {
+  // app.user = data.user;
+  console.log(review);
+  $('#notification').html("Review Deleted!");
+  $('#entry').html("");
+  $('#content').html("");
+};
+
 module.exports = {
   displayCreateNewReviewSuccess,
   displayFindReviewSuccess,
@@ -90,5 +98,6 @@ module.exports = {
   getReviewsSuccess,
   getMyReviewsSuccess,
   clearReviews,
+  deleteReviewSuccess,
   failure,
 };

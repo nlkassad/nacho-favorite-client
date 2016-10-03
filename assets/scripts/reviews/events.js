@@ -70,6 +70,15 @@ const onEditReview = (event) => {
   .fail(ui.failure);
 };
 
+const onDeleteReview = (event) => {
+  event.preventDefault();
+  let data_id = event.target.id;
+  console.log(data_id);
+  api.deleteReview(data_id)
+  .done(ui.deleteReviewSuccess)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#control').on('click','#getReviewsButton', onGetReviews);
   // $('#getReviewsButton').on('click', onGetReviews);
@@ -84,6 +93,7 @@ const addHandlers = () => {
   $('#entry').on('submit','#find-review', onFindReview);
   $('#content').on('click','.display-edit-review', onDisplayEditReview);
   $('#content').on('submit','.edit-review', onEditReview);
+  $('#content').on('click','.delete-review', onDeleteReview);
 };
 
 module.exports = {
