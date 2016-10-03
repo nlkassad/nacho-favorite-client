@@ -21,6 +21,8 @@ const displayFindReviewSuccess = () => {
 const getReviewsSuccess = (reviews) => {
   $('#content').html(showReviewsTemplate(reviews));
   $('#entry').html("");
+  $('#notification').html("");
+
   // $('#content').append(showReviewsTemplate({reviews}));
 
   console.log(reviews);
@@ -29,6 +31,8 @@ const getReviewsSuccess = (reviews) => {
 const getMyReviewsSuccess = (reviews) => {
   $('#content').html(showMyReviewsTemplate(reviews));
   $('#entry').html("");
+  $('#notification').html("");
+
   // $('#content').append(showReviewsTemplate({reviews}));
 
   console.log(reviews);
@@ -37,6 +41,7 @@ const getMyReviewsSuccess = (reviews) => {
 const clearReviews = () => {
   $('#content').html("");
   $('#entry').html("");
+  $('#notification').html("");
 };
 
 const failure = (error) => {
@@ -55,6 +60,7 @@ const findReviewSuccess = (review) => {
   console.log(review);
   $('#content').html(showReview(review));
   $('#entry').html("");
+  $('#notification').html("");
 };
 
 const displayEditReviewSuccess = (data) => {
@@ -69,8 +75,9 @@ const displayEditReviewSuccess = (data) => {
 const editReviewSuccess = (review) => {
   // app.user = data.user;
   console.log(review);
-  $('#notification').html("Review Created" + showNewReview(review));
+  $('#notification').html("Review Updated!");
   $('#entry').html("");
+  $('#content').html("");
 };
 
 module.exports = {
