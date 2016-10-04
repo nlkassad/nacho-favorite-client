@@ -257,7 +257,8 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'https://nacho-favorite-api.herokuapp.com'
+	  // host: 'https://nacho-favorite-api.herokuapp.com',
+	  host: 'http://localhost:3000'
 	};
 
 	module.exports = app;
@@ -1671,7 +1672,7 @@ webpackJsonp([0],[
 
 	var getMyReviews = function getMyReviews() {
 	  return $.ajax({
-	    url: app.host + "/reviews", // "http://book-json.herokuapp.com/books"
+	    url: app.host + "/my-reviews", // "http://book-json.herokuapp.com/books"
 	    method: 'GET',
 	    headers: {
 	      Authorization: 'Token token=' + app.user.token
