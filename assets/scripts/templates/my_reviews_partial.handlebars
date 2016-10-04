@@ -1,15 +1,15 @@
 <h3>Menu Item: {{menu_item.dish_id}} Restaurant: {{menu_item.restaurant_id}}</h3>
 
 {{#if rating}}
-  <p>{{rating}}</p>
+  <p>Rating: {{rating}}</p>
 {{else}}
   <p> No rating </p>
 {{/if}}
 
 {{#if note}}
-  <p>{{note}}</p>
+  <p>Notes: {{note}}</p>
 {{else}}
-  <p> No note </p>
+  <p> No notes </p>
 {{/if}}
-<button id="editReviewButton" class="btn btn-default">Edit Review</button>
-<button id="deleteReviewButton" class="btn btn-default">Delete Review</button>
+<button id={{id}} class="btn btn-default display-edit-review">Edit Review</button>
+<button id={{id}} class="btn btn-default delete-review">Delete Review</button>

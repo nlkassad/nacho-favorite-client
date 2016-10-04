@@ -1,0 +1,9 @@
+
+<h3>Review: </h3>
+<p><strong> Dish ID:</strong> {{menu_item.dish.name}} <strong>Restaurant ID:</strong> {{menu_item.restaurant.name}}
+</p>
+
+{{#each menu_item.reviews}}
+  <p>Rating: {{rating}} Note: {{note}}</p>
+
+{{/each}}
