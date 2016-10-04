@@ -6,6 +6,9 @@ let getReviews = function(){
   return $.ajax({
     url: app.host + "/reviews", // "http://book-json.herokuapp.com/books"
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
     // dataType: 'json'
   });
 };
@@ -14,6 +17,9 @@ let getMyReviews = function(){
   return $.ajax({
     url: app.host + "/reviews", // "http://book-json.herokuapp.com/books"
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
     // dataType: 'json'
   });
 };
@@ -22,6 +28,9 @@ const createNewReview = (data) => {
   return $.ajax({
     url: app.host + '/reviews',
     method: "POST",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
     data: data,
   });
 };
@@ -32,6 +41,9 @@ const findReview = (data) => {
   return $.ajax({
     url: app.host + '/menu_items/' + item_search,
     method: "GET",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
     data: data,
   });
 };
@@ -42,6 +54,9 @@ const editReview = (data, data_id) => {
   return $.ajax({
     url: app.host + '/reviews/' + review_id,
     method: "PATCH",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
     data: data,
   });
 };
@@ -52,6 +67,9 @@ const deleteReview = (data_id) => {
   return $.ajax({
     url: app.host + '/reviews/' + review_id,
     method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
