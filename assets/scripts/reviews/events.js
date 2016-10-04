@@ -22,6 +22,27 @@ const onGetReviews = (event) => {
   .fail(ui.failure);
 };
 
+const onGetMenuItems = (event) => {
+  event.preventDefault();
+  api.getMenuItems()
+  .done(ui.getMenuItemsSuccess)
+  .fail(ui.failure);
+};
+
+const onGetRestaurants = (event) => {
+  event.preventDefault();
+  api.getRestaurants()
+  .done(ui.getRestaurantsSuccess)
+  .fail(ui.failure);
+};
+
+const onGetDishes = (event) => {
+  event.preventDefault();
+  api.getDishes()
+  .done(ui.getDishesSuccess)
+  .fail(ui.failure);
+};
+
 const onGetMyReviews = (event) => {
   event.preventDefault();
   api.getMyReviews()
@@ -81,6 +102,11 @@ const onDeleteReview = (event) => {
 
 const addHandlers = () => {
   $('#control').on('click','#getReviewsButton', onGetReviews);
+
+  $('#control').on('click','#get-menu-items', onGetMenuItems);
+  $('#control').on('click','#get-restaurants', onGetRestaurants);
+  $('#control').on('click','#get-dishes', onGetDishes);
+
   // $('#getReviewsButton').on('click', onGetReviews);
   $('#control').on('click','#getMyReviewsButton', onGetMyReviews);
   // $('#getMyReviewsButton').on('click', onGetMyReviews);

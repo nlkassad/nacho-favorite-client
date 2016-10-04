@@ -52,6 +52,18 @@ const onChangePassword = (event) => {
   .fail(ui.failure);
 };
 
+const showAdminFunctions = (event) => {
+  event.preventDefault();
+  ui.showAdminFunctionsSuccess();
+};
+
+const onGetUsers = (event) => {
+  event.preventDefault();
+  api.getUsers()
+  .done(ui.getUsersSuccess)
+  .fail(ui.failure);
+};
+
 
 const addHandlers = () => {
   // $('#display-sign-up').on('click', onDisplaySignUp);
@@ -66,6 +78,9 @@ const addHandlers = () => {
   // $('#sign-out').on('submit', onSignOut);
   $('#control').on('click','#sign-out', onSignOut);
   $('#control').on('click','#display-change-password', onDisplayChangePassword);
+  $('nav').on('click', '#display-admin', showAdminFunctions);
+  $('#control').on('click','#get-users', onGetUsers);
+
   // $('#change-password').on('submit', onChangePassword);
 
 

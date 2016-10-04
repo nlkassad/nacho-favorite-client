@@ -1,6 +1,7 @@
 'use strict';
 
 const showReviewsTemplate = require('../templates/review-listing.handlebars');
+const showListingTemplate = require('../templates/listing.handlebars');
 const showMyReviewsTemplate = require('../templates/my-review-listing.handlebars');
 const displayCreateNewReview = require('../templates/display-create-new-review.handlebars');
 const showNewReview = require('../templates/new-review.handlebars');
@@ -26,6 +27,36 @@ const getReviewsSuccess = (reviews) => {
   // $('#content').append(showReviewsTemplate({reviews}));
 
   console.log(reviews);
+};
+
+const getMenuItemsSuccess = (menu_items) => {
+  $('#content').html(showListingTemplate(menu_items));
+  $('#entry').html("");
+  $('#notification').html("");
+
+  // $('#content').append(showReviewsTemplate({reviews}));
+
+  console.log(menu_items);
+};
+
+const getRestaurantsSuccess = (restaurants) => {
+  $('#content').html(showListingTemplate(restaurants));
+  $('#entry').html("");
+  $('#notification').html("");
+
+  // $('#content').append(showReviewsTemplate({reviews}));
+
+  console.log(restaurants);
+};
+
+const getDishesSuccess = (dishes) => {
+  $('#content').html(showListingTemplate(dishes));
+  $('#entry').html("");
+  $('#notification').html("");
+
+  // $('#content').append(showReviewsTemplate({reviews}));
+
+  console.log(dishes);
 };
 
 const getMyReviewsSuccess = (reviews) => {
@@ -96,6 +127,9 @@ module.exports = {
   editReviewSuccess,
   findReviewSuccess,
   getReviewsSuccess,
+  getMenuItemsSuccess,
+  getRestaurantsSuccess,
+  getDishesSuccess,
   getMyReviewsSuccess,
   clearReviews,
   deleteReviewSuccess,

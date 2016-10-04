@@ -39,9 +39,21 @@ const changePassword = (data) => {
   });
 };
 
+let getUsers = function(){
+  return $.ajax({
+    url: app.host + "/users", // "http://book-json.herokuapp.com/books"
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    // dataType: 'json'
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  getUsers,
 };
