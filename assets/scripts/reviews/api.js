@@ -15,7 +15,7 @@ let getReviews = function(){
 
 let getMyReviews = function(){
   return $.ajax({
-    url: app.host + "/reviews", // "http://book-json.herokuapp.com/books"
+    url: app.host + "/my-reviews", // "http://book-json.herokuapp.com/books"
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
