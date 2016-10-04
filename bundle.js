@@ -257,8 +257,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  // host: 'https://nacho-favorite-api.herokuapp.com',
-	  host: 'http://localhost:3000'
+	  host: 'https://nacho-favorite-api.herokuapp.com'
 	};
 
 	module.exports = app;
