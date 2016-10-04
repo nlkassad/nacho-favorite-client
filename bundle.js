@@ -1662,14 +1662,20 @@ webpackJsonp([0],[
 	var getReviews = function getReviews() {
 	  return $.ajax({
 	    url: app.host + "/reviews", // "http://book-json.herokuapp.com/books"
-	    method: 'GET'
+	    method: 'GET',
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    }
 	  });
 	};
 
 	var getMyReviews = function getMyReviews() {
 	  return $.ajax({
 	    url: app.host + "/reviews", // "http://book-json.herokuapp.com/books"
-	    method: 'GET'
+	    method: 'GET',
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    }
 	  });
 	};
 
@@ -1677,6 +1683,9 @@ webpackJsonp([0],[
 	  return $.ajax({
 	    url: app.host + '/reviews',
 	    method: "POST",
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    },
 	    data: data
 	  });
 	};
@@ -1687,6 +1696,9 @@ webpackJsonp([0],[
 	  return $.ajax({
 	    url: app.host + '/menu_items/' + item_search,
 	    method: "GET",
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    },
 	    data: data
 	  });
 	};
@@ -1697,6 +1709,9 @@ webpackJsonp([0],[
 	  return $.ajax({
 	    url: app.host + '/reviews/' + review_id,
 	    method: "PATCH",
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    },
 	    data: data
 	  });
 	};
@@ -1706,7 +1721,10 @@ webpackJsonp([0],[
 	  console.log(review_id);
 	  return $.ajax({
 	    url: app.host + '/reviews/' + review_id,
-	    method: "DELETE"
+	    method: "DELETE",
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    }
 	  });
 	};
 
