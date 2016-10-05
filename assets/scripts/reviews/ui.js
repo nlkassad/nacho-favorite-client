@@ -8,11 +8,17 @@ const showNewReview = require('../templates/new-review.handlebars');
 const displayFindReview = require('../templates/display-find-review.handlebars');
 const showReview = require('../templates/show-review.handlebars');
 const displayEditReview = require('../templates/display-edit-review.handlebars');
+const displayCreateMenuItem = require('../templates/display-create-menu-item.handlebars');
 
 
 
-const displayCreateNewReviewSuccess = () => {
-  $('#entry').html(displayCreateNewReview());
+
+const displayCreateNewReviewSuccess = (menu_items) => {
+  $('#entry').html(displayCreateNewReview(menu_items));
+};
+
+const displayCreateMenuItemSuccess = () => {
+  $('#entry').html(displayCreateMenuItem());
 };
 
 const displayFindReviewSuccess = () => {
@@ -86,6 +92,13 @@ const createNewReviewSuccess = (review) => {
   $('#entry').html("");
 };
 
+const createMenuItemSuccess = (menu_item) => {
+  // app.user = data.user;
+  console.log(menu_item);
+  $('#notification').html("Menu Item Created");
+  $('#entry').html("");
+};
+
 const findReviewSuccess = (review) => {
   // app.user = data.user;
   console.log(review);
@@ -121,9 +134,11 @@ const deleteReviewSuccess = (review) => {
 
 module.exports = {
   displayCreateNewReviewSuccess,
+  displayCreateMenuItemSuccess,
   displayFindReviewSuccess,
   displayEditReviewSuccess,
   createNewReviewSuccess,
+  createMenuItemSuccess,
   editReviewSuccess,
   findReviewSuccess,
   getReviewsSuccess,

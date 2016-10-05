@@ -40,6 +40,7 @@ const displaySignInSuccess = () => {
 
 const showAdminFunctionsSuccess = () => {
   $('#control').append(showAdminFunctions());
+  $('nav').html("Nacho Favorite &#x1f33d; &#x1f9c0;");
 };
 
 const displayChangePasswordSuccess = () => {

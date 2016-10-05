@@ -68,6 +68,17 @@ const createNewReview = (data) => {
   });
 };
 
+const createMenuItem = (data) => {
+  return $.ajax({
+    url: app.host + '/menu_items',
+    method: "POST",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
 const findReview = (data) => {
   let item_search = data.menu_item.id;
   console.log(item_search);
@@ -113,6 +124,7 @@ module.exports = {
   getDishes,
   getMyReviews,
   createNewReview,
+  createMenuItem,
   editReview,
   findReview,
   deleteReview

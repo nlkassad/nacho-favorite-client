@@ -3,6 +3,9 @@
   <ul class="list">
     {{#each restaurants}}
       <li>{{name}}</li>
+      {{#each restaurants.reviews}}
+        {{name}}
+      {{/each}}
     {{/each}}
   </ul>
 {{else if menu_items}}
@@ -15,6 +18,12 @@
   <ul class="list">
     {{#each dishes}}
       <li>{{id}}{{name}}</li>
+    {{/each}}
+  </ul>
+{{else if users}}
+  <ul class="list">
+    {{#each users}}
+      <li>{{id}}{{email}}</li>
     {{/each}}
   </ul>
 {{/if}}
