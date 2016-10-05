@@ -89,7 +89,7 @@ webpackJsonp([0],[
 	var onSignUp = function onSignUp(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log(data);
+	  // console.log(data);
 	  api.signUp(data).done(ui.signUpSuccess).fail(ui.failure);
 	};
 
@@ -304,10 +304,10 @@ webpackJsonp([0],[
 
 	var success = function success(data) {
 	  if (data) {
-	    console.log(data);
+	    // console.log(data);
 	  } else {
-	    console.log('Success');
-	  }
+	      // console.log('Success');
+	    }
 	};
 
 	var failure = function failure(error) {
@@ -344,7 +344,7 @@ webpackJsonp([0],[
 
 	var signInSuccess = function signInSuccess(data) {
 	  app.user = data.user;
-	  console.log(app.user);
+	  // console.log(app.user);
 	  $('#control').html(signedIn());
 	  $('#entry').html("");
 	  if (app.user.id === 1) {
@@ -353,7 +353,7 @@ webpackJsonp([0],[
 	};
 
 	var signOutSuccess = function signOutSuccess() {
-	  console.log('User signed out successfully');
+	  // console.log('User signed out successfully');
 	  app.user = null;
 	  $('#control').html(signedOut());
 	  $('#entry').html("");
@@ -368,7 +368,7 @@ webpackJsonp([0],[
 
 	  // $('#content').append(showReviewsTemplate({reviews}));
 
-	  console.log(users);
+	  // console.log(users);
 	};
 
 	module.exports = {
@@ -1732,21 +1732,21 @@ webpackJsonp([0],[
 	var onCreateNewReview = function onCreateNewReview(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log(data);
+	  // console.log(data);
 	  api.createNewReview(data).done(ui.createNewReviewSuccess).fail(ui.failure);
 	};
 
 	var onCreateMenuItem = function onCreateMenuItem(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log(data);
+	  // console.log(data);
 	  api.createMenuItem(data).done(ui.createMenuItemSuccess).fail(ui.failure);
 	};
 
 	var onFindReview = function onFindReview(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log(data);
+	  // console.log(data);
 	  api.findReview(data).done(ui.findReviewSuccess).fail(ui.failure);
 	};
 
@@ -1754,7 +1754,7 @@ webpackJsonp([0],[
 	  event.preventDefault();
 	  // $(event.target).after("Edit");
 	  var data = event.target;
-	  console.log(data);
+	  // console.log(data);
 	  ui.displayEditReviewSuccess(data);
 	};
 
@@ -1762,14 +1762,14 @@ webpackJsonp([0],[
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
 	  var data_id = event.target.name;
-	  console.log(data, data_id);
+	  // console.log(data, data_id);
 	  api.editReview(data, data_id).done(ui.editReviewSuccess).fail(ui.failure);
 	};
 
 	var onDeleteReview = function onDeleteReview(event) {
 	  event.preventDefault();
 	  var data_id = event.target.id;
-	  console.log(data_id);
+	  // console.log(data_id);
 	  api.deleteReview(data_id).done(ui.deleteReviewSuccess).fail(ui.failure);
 	};
 
@@ -1905,7 +1905,7 @@ webpackJsonp([0],[
 
 	var findReview = function findReview(data) {
 	  var item_search = data.menu_item.id;
-	  console.log(item_search);
+	  // console.log(item_search);
 	  return $.ajax({
 	    url: app.host + '/menu_items/' + item_search,
 	    method: "GET",
@@ -1918,7 +1918,7 @@ webpackJsonp([0],[
 
 	var editReview = function editReview(data, data_id) {
 	  var review_id = data_id;
-	  console.log(review_id);
+	  // console.log(review_id);
 	  return $.ajax({
 	    url: app.host + '/reviews/' + review_id,
 	    method: "PATCH",
@@ -1931,7 +1931,7 @@ webpackJsonp([0],[
 
 	var deleteReview = function deleteReview(data_id) {
 	  var review_id = data_id;
-	  console.log(review_id);
+	  // console.log(review_id);
 	  return $.ajax({
 	    url: app.host + '/reviews/' + review_id,
 	    method: "DELETE",
@@ -1990,7 +1990,7 @@ webpackJsonp([0],[
 
 	  // $('#content').append(showReviewsTemplate({reviews}));
 
-	  console.log(reviews);
+	  // console.log(reviews);
 	};
 
 	var getMenuItemsSuccess = function getMenuItemsSuccess(menu_items) {
@@ -2000,7 +2000,7 @@ webpackJsonp([0],[
 
 	  // $('#content').append(showReviewsTemplate({reviews}));
 
-	  console.log(menu_items);
+	  // console.log(menu_items);
 	};
 
 	var getRestaurantsSuccess = function getRestaurantsSuccess(restaurants) {
@@ -2010,7 +2010,7 @@ webpackJsonp([0],[
 
 	  // $('#content').append(showReviewsTemplate({reviews}));
 
-	  console.log(restaurants);
+	  // console.log(restaurants);
 	};
 
 	var getDishesSuccess = function getDishesSuccess(dishes) {
@@ -2020,7 +2020,7 @@ webpackJsonp([0],[
 
 	  // $('#content').append(showReviewsTemplate({reviews}));
 
-	  console.log(dishes);
+	  // console.log(dishes);
 	};
 
 	var getMyReviewsSuccess = function getMyReviewsSuccess(reviews) {
@@ -2030,7 +2030,7 @@ webpackJsonp([0],[
 
 	  // $('#content').append(showReviewsTemplate({reviews}));
 
-	  console.log(reviews);
+	  // console.log(reviews);
 	};
 
 	var clearReviews = function clearReviews() {
@@ -2040,26 +2040,26 @@ webpackJsonp([0],[
 	};
 
 	var failure = function failure(error) {
-	  console.error(error);
+	  // console.error(error);
 	};
 
 	var createNewReviewSuccess = function createNewReviewSuccess(review) {
 	  // app.user = data.user;
-	  console.log(review);
+	  // console.log(review);
 	  $('#notification').html("Review Created" + showNewReview(review));
 	  $('#entry').html("");
 	};
 
 	var createMenuItemSuccess = function createMenuItemSuccess(menu_item) {
 	  // app.user = data.user;
-	  console.log(menu_item);
+	  // console.log(menu_item);
 	  $('#notification').html("Menu Item Created");
 	  $('#entry').html("");
 	};
 
 	var findReviewSuccess = function findReviewSuccess(review) {
 	  // app.user = data.user;
-	  console.log(review);
+	  // console.log(review);
 	  $('#content').html(showReview(review));
 	  $('#entry').html("");
 	  $('#notification').html("");
@@ -2068,15 +2068,15 @@ webpackJsonp([0],[
 	var displayEditReviewSuccess = function displayEditReviewSuccess(data) {
 	  // app.user = data.user;
 	  var data_id = data.id;
-	  console.log(data);
-	  console.log(data_id);
+	  // console.log(data);
+	  // console.log(data_id);
 	  $(data).after(displayEditReview({ data_id: data_id }));
 	  // $('#entry').html("");
 	};
 
 	var editReviewSuccess = function editReviewSuccess(review) {
 	  // app.user = data.user;
-	  console.log(review);
+	  // console.log(review);
 	  $('#notification').html("Review Updated!");
 	  $('#entry').html("");
 	  $('#content').html("");
@@ -2084,7 +2084,7 @@ webpackJsonp([0],[
 
 	var deleteReviewSuccess = function deleteReviewSuccess(review) {
 	  // app.user = data.user;
-	  console.log(review);
+	  // console.log(review);
 	  $('#notification').html("Review Deleted!");
 	  $('#entry').html("");
 	  $('#content').html("");
