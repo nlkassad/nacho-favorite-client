@@ -1,8 +1,10 @@
 <form id="create-new-review">
   <fieldset>
     <legend>Review Some Nachos! &#x2795; &#x2b55; &#x2796;</legend>
-    <input id="vote" type="button" name="-1" value="&#x2795;">
-    <input id="review-rating" type="rating" name="review[rating]" value="" placeholder="Enter your rating">
+    <input class="vote" type="button" name="1" value="&#x2795;">
+    <input class="vote" type="button" name="0" value="&#x2b55;">
+    <input class="vote" type="button" name="-1" value="&#x2796;">
+    <input id="review-rating" type="hidden" name="review[rating]" value="">
     <input type="note" name="review[note]" placeholder="Enter your note">
     <input type="menu_item" name="review[menu_item_id]" placeholder="Enter the Menu Item ID">
     <input type="submit" name="submit" value="Submit Review">

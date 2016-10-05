@@ -104,7 +104,6 @@ const onVote = (event) => {
   event.preventDefault();
   let vote = event.target.name;
   document.getElementById("review-rating").value = vote;
-
   // console.log(vote);
   // $('#review-rating').name=vote;
   // console.log('#review-rating');
@@ -127,7 +126,7 @@ const addHandlers = () => {
 
   $('#entry').on('submit','#create-new-review', onCreateNewReview);
   $('#entry').on('submit','#find-review', onFindReview);
-  $('#entry').on('click','#vote', onVote);
+  $('#entry').on('click','.vote', onVote);
   $('#content').on('click','.display-edit-review', onDisplayEditReview);
   $('#content').on('submit','.edit-review', onEditReview);
   $('#content').on('click','.delete-review', onDeleteReview);
