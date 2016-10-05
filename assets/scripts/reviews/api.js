@@ -13,6 +13,39 @@ let getReviews = function(){
   });
 };
 
+let getMenuItems = function(){
+  return $.ajax({
+    url: app.host + "/menu_items", // "http://book-json.herokuapp.com/books"
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    // dataType: 'json'
+  });
+};
+
+let getRestaurants = function(){
+  return $.ajax({
+    url: app.host + "/restaurants", // "http://book-json.herokuapp.com/books"
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    // dataType: 'json'
+  });
+};
+
+let getDishes = function(){
+  return $.ajax({
+    url: app.host + "/dishes", // "http://book-json.herokuapp.com/books"
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    // dataType: 'json'
+  });
+};
+
 let getMyReviews = function(){
   return $.ajax({
     url: app.host + "/my-reviews", // "http://book-json.herokuapp.com/books"
@@ -27,6 +60,17 @@ let getMyReviews = function(){
 const createNewReview = (data) => {
   return $.ajax({
     url: app.host + '/reviews',
+    method: "POST",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
+const createMenuItem = (data) => {
+  return $.ajax({
+    url: app.host + '/menu_items',
     method: "POST",
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -75,8 +119,12 @@ const deleteReview = (data_id) => {
 
 module.exports = {
   getReviews,
+  getMenuItems,
+  getRestaurants,
+  getDishes,
   getMyReviews,
   createNewReview,
+  createMenuItem,
   editReview,
   findReview,
   deleteReview

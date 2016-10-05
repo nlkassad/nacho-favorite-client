@@ -7,7 +7,14 @@ const ui = require('./ui.js');
 
 const onDisplayCreateNewReview = (event) => {
   event.preventDefault();
-  ui.displayCreateNewReviewSuccess();
+  api.getMenuItems()
+    .done(ui.displayCreateNewReviewSuccess)
+    .fail(ui.failure);
+};
+
+const onDisplayCreateMenuItem= (event) => {
+  event.preventDefault();
+  ui.displayCreateMenuItemSuccess();
 };
 
 const onDisplayFindReview = (event) => {
@@ -19,6 +26,27 @@ const onGetReviews = (event) => {
   event.preventDefault();
   api.getReviews()
   .done(ui.getReviewsSuccess)
+  .fail(ui.failure);
+};
+
+const onGetMenuItems = (event) => {
+  event.preventDefault();
+  api.getMenuItems()
+  .done(ui.getMenuItemsSuccess)
+  .fail(ui.failure);
+};
+
+const onGetRestaurants = (event) => {
+  event.preventDefault();
+  api.getRestaurants()
+  .done(ui.getRestaurantsSuccess)
+  .fail(ui.failure);
+};
+
+const onGetDishes = (event) => {
+  event.preventDefault();
+  api.getDishes()
+  .done(ui.getDishesSuccess)
   .fail(ui.failure);
 };
 
@@ -40,6 +68,15 @@ const onCreateNewReview = (event) => {
   console.log(data);
   api.createNewReview(data)
   .done(ui.createNewReviewSuccess)
+  .fail(ui.failure);
+};
+
+const onCreateMenuItem = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
+  api.createMenuItem(data)
+  .done(ui.createMenuItemSuccess)
   .fail(ui.failure);
 };
 
@@ -79,21 +116,49 @@ const onDeleteReview = (event) => {
   .fail(ui.failure);
 };
 
+const onVote = (event) => {
+  event.preventDefault();
+  let vote = event.target.name;
+  document.getElementById("review-rating").value = vote;
+  // console.log(vote);
+  // $('#review-rating').name=vote;
+  // console.log('#review-rating');
+};
+
+const onSelectMenuItem = (event) => {
+  event.preventDefault();
+  let value = event.target.value;
+  document.getElementById("menu-field").value = value;
+  // console.log(vote);
+  // $('#review-rating').name=vote;
+  // console.log('#review-rating');
+};
+
 const addHandlers = () => {
   $('#control').on('click','#getReviewsButton', onGetReviews);
+
+  $('#control').on('click','#get-menu-items', onGetMenuItems);
+  $('#control').on('click','#get-restaurants', onGetRestaurants);
+  $('#control').on('click','#get-dishes', onGetDishes);
+
   // $('#getReviewsButton').on('click', onGetReviews);
   $('#control').on('click','#getMyReviewsButton', onGetMyReviews);
   // $('#getMyReviewsButton').on('click', onGetMyReviews);
   $('#control').on('click','#clearReviewsButton', onClearReviews);
   // $('#clearReviewsButton').on('click', onClearReviews);
   $('#control').on('click','#display-create-new-review', onDisplayCreateNewReview);
+  $('#control').on('click','#display-create-menu-item', onDisplayCreateMenuItem);
+
   $('#control').on('click','#display-find-review', onDisplayFindReview);
 
   $('#entry').on('submit','#create-new-review', onCreateNewReview);
+  $('#entry').on('submit','#create-menu-item', onCreateMenuItem);
   $('#entry').on('submit','#find-review', onFindReview);
+  $('body').on('click','.vote', onVote);
   $('#content').on('click','.display-edit-review', onDisplayEditReview);
   $('#content').on('submit','.edit-review', onEditReview);
   $('#content').on('click','.delete-review', onDeleteReview);
+  $('body').on('change','.menu-item-selector', onSelectMenuItem);
 };
 
 module.exports = {

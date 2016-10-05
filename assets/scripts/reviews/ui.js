@@ -1,17 +1,24 @@
 'use strict';
 
 const showReviewsTemplate = require('../templates/review-listing.handlebars');
+const showListingTemplate = require('../templates/listing.handlebars');
 const showMyReviewsTemplate = require('../templates/my-review-listing.handlebars');
 const displayCreateNewReview = require('../templates/display-create-new-review.handlebars');
 const showNewReview = require('../templates/new-review.handlebars');
 const displayFindReview = require('../templates/display-find-review.handlebars');
 const showReview = require('../templates/show-review.handlebars');
 const displayEditReview = require('../templates/display-edit-review.handlebars');
+const displayCreateMenuItem = require('../templates/display-create-menu-item.handlebars');
 
 
 
-const displayCreateNewReviewSuccess = () => {
-  $('#entry').html(displayCreateNewReview());
+
+const displayCreateNewReviewSuccess = (menu_items) => {
+  $('#entry').html(displayCreateNewReview(menu_items));
+};
+
+const displayCreateMenuItemSuccess = () => {
+  $('#entry').html(displayCreateMenuItem());
 };
 
 const displayFindReviewSuccess = () => {
@@ -26,6 +33,36 @@ const getReviewsSuccess = (reviews) => {
   // $('#content').append(showReviewsTemplate({reviews}));
 
   console.log(reviews);
+};
+
+const getMenuItemsSuccess = (menu_items) => {
+  $('#content').html(showListingTemplate(menu_items));
+  $('#entry').html("");
+  $('#notification').html("");
+
+  // $('#content').append(showReviewsTemplate({reviews}));
+
+  console.log(menu_items);
+};
+
+const getRestaurantsSuccess = (restaurants) => {
+  $('#content').html(showListingTemplate(restaurants));
+  $('#entry').html("");
+  $('#notification').html("");
+
+  // $('#content').append(showReviewsTemplate({reviews}));
+
+  console.log(restaurants);
+};
+
+const getDishesSuccess = (dishes) => {
+  $('#content').html(showListingTemplate(dishes));
+  $('#entry').html("");
+  $('#notification').html("");
+
+  // $('#content').append(showReviewsTemplate({reviews}));
+
+  console.log(dishes);
 };
 
 const getMyReviewsSuccess = (reviews) => {
@@ -52,6 +89,13 @@ const createNewReviewSuccess = (review) => {
   // app.user = data.user;
   console.log(review);
   $('#notification').html("Review Created" + showNewReview(review));
+  $('#entry').html("");
+};
+
+const createMenuItemSuccess = (menu_item) => {
+  // app.user = data.user;
+  console.log(menu_item);
+  $('#notification').html("Menu Item Created");
   $('#entry').html("");
 };
 
@@ -90,12 +134,17 @@ const deleteReviewSuccess = (review) => {
 
 module.exports = {
   displayCreateNewReviewSuccess,
+  displayCreateMenuItemSuccess,
   displayFindReviewSuccess,
   displayEditReviewSuccess,
   createNewReviewSuccess,
+  createMenuItemSuccess,
   editReviewSuccess,
   findReviewSuccess,
   getReviewsSuccess,
+  getMenuItemsSuccess,
+  getRestaurantsSuccess,
+  getDishesSuccess,
   getMyReviewsSuccess,
   clearReviews,
   deleteReviewSuccess,
