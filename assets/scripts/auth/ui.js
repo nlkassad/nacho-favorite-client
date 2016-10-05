@@ -14,9 +14,9 @@ const showReviewsTemplate = require('../templates/review-listing.handlebars');
 
 const success = (data) => {
   if (data) {
-    console.log(data);
+    // console.log(data);
   } else {
-    console.log('Success');
+    // console.log('Success');
   }
 };
 
@@ -54,7 +54,7 @@ const signUpSuccess = (data) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
-  console.log(app.user);
+  // console.log(app.user);
   $('#control').html(signedIn());
   $('#entry').html("");
   if (app.user.id === 1) {
@@ -63,7 +63,7 @@ const signInSuccess = (data) => {
 };
 
 const signOutSuccess = () => {
-  console.log('User signed out successfully');
+  // console.log('User signed out successfully');
   app.user = null;
   $('#control').html(signedOut());
   $('#entry').html("");
@@ -78,7 +78,7 @@ const getUsersSuccess = (users) => {
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
-  console.log(users);
+  // console.log(users);
 };
 
 module.exports = {

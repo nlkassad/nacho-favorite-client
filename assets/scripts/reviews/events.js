@@ -65,7 +65,7 @@ const onClearReviews = (event) => {
 const onCreateNewReview = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   api.createNewReview(data)
   .done(ui.createNewReviewSuccess)
   .fail(ui.failure);
@@ -74,7 +74,7 @@ const onCreateNewReview = (event) => {
 const onCreateMenuItem = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   api.createMenuItem(data)
   .done(ui.createMenuItemSuccess)
   .fail(ui.failure);
@@ -83,7 +83,7 @@ const onCreateMenuItem = (event) => {
 const onFindReview = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   api.findReview(data)
   .done(ui.findReviewSuccess)
   .fail(ui.failure);
@@ -93,7 +93,7 @@ const onDisplayEditReview = (event) => {
   event.preventDefault();
   // $(event.target).after("Edit");
   let data = event.target;
-  console.log(data);
+  // console.log(data);
   ui.displayEditReviewSuccess(data);
 };
 
@@ -101,7 +101,7 @@ const onEditReview = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   let data_id = event.target.name;
-  console.log(data, data_id);
+  // console.log(data, data_id);
   api.editReview(data, data_id)
   .done(ui.editReviewSuccess)
   .fail(ui.failure);
@@ -110,7 +110,7 @@ const onEditReview = (event) => {
 const onDeleteReview = (event) => {
   event.preventDefault();
   let data_id = event.target.id;
-  console.log(data_id);
+  // console.log(data_id);
   api.deleteReview(data_id)
   .done(ui.deleteReviewSuccess)
   .fail(ui.failure);
