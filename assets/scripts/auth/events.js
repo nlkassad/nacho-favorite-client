@@ -23,7 +23,7 @@ const onDisplayChangePassword = (event) => {
 const onSignUp = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   api.signUp(data)
   .done(ui.signUpSuccess)
   .fail(ui.failure);

@@ -32,7 +32,7 @@ const getReviewsSuccess = (reviews) => {
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
-  console.log(reviews);
+  // console.log(reviews);
 };
 
 const getMenuItemsSuccess = (menu_items) => {
@@ -42,7 +42,7 @@ const getMenuItemsSuccess = (menu_items) => {
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
-  console.log(menu_items);
+  // console.log(menu_items);
 };
 
 const getRestaurantsSuccess = (restaurants) => {
@@ -52,7 +52,7 @@ const getRestaurantsSuccess = (restaurants) => {
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
-  console.log(restaurants);
+  // console.log(restaurants);
 };
 
 const getDishesSuccess = (dishes) => {
@@ -62,7 +62,7 @@ const getDishesSuccess = (dishes) => {
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
-  console.log(dishes);
+  // console.log(dishes);
 };
 
 const getMyReviewsSuccess = (reviews) => {
@@ -72,7 +72,7 @@ const getMyReviewsSuccess = (reviews) => {
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
-  console.log(reviews);
+  // console.log(reviews);
 };
 
 const clearReviews = () => {
@@ -82,26 +82,26 @@ const clearReviews = () => {
 };
 
 const failure = (error) => {
-  console.error(error);
+  // console.error(error);
 };
 
 const createNewReviewSuccess = (review) => {
   // app.user = data.user;
-  console.log(review);
+  // console.log(review);
   $('#notification').html("Review Created" + showNewReview(review));
   $('#entry').html("");
 };
 
 const createMenuItemSuccess = (menu_item) => {
   // app.user = data.user;
-  console.log(menu_item);
+  // console.log(menu_item);
   $('#notification').html("Menu Item Created");
   $('#entry').html("");
 };
 
 const findReviewSuccess = (review) => {
   // app.user = data.user;
-  console.log(review);
+  // console.log(review);
   $('#content').html(showReview(review));
   $('#entry').html("");
   $('#notification').html("");
@@ -110,15 +110,15 @@ const findReviewSuccess = (review) => {
 const displayEditReviewSuccess = (data) => {
   // app.user = data.user;
   let data_id = data.id;
-  console.log(data);
-  console.log(data_id);
+  // console.log(data);
+  // console.log(data_id);
   $(data).after(displayEditReview({data_id}));
   // $('#entry').html("");
 };
 
 const editReviewSuccess = (review) => {
   // app.user = data.user;
-  console.log(review);
+  // console.log(review);
   $('#notification').html("Review Updated!");
   $('#entry').html("");
   $('#content').html("");
@@ -126,7 +126,7 @@ const editReviewSuccess = (review) => {
 
 const deleteReviewSuccess = (review) => {
   // app.user = data.user;
-  console.log(review);
+  // console.log(review);
   $('#notification').html("Review Deleted!");
   $('#entry').html("");
   $('#content').html("");

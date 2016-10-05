@@ -81,7 +81,7 @@ const createMenuItem = (data) => {
 
 const findReview = (data) => {
   let item_search = data.menu_item.id;
-  console.log(item_search);
+  // console.log(item_search);
   return $.ajax({
     url: app.host + '/menu_items/' + item_search,
     method: "GET",
@@ -94,7 +94,7 @@ const findReview = (data) => {
 
 const editReview = (data, data_id) => {
   let review_id = data_id;
-  console.log(review_id);
+  // console.log(review_id);
   return $.ajax({
     url: app.host + '/reviews/' + review_id,
     method: "PATCH",
@@ -107,7 +107,7 @@ const editReview = (data, data_id) => {
 
 const deleteReview = (data_id) => {
   let review_id = data_id;
-  console.log(review_id);
+  // console.log(review_id);
   return $.ajax({
     url: app.host + '/reviews/' + review_id,
     method: "DELETE",
