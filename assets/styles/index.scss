@@ -39,3 +39,19 @@ nav {
     7px 8px 0px #378ab4,
     8px 7px 0px #5dabcd;
 }
+
+.vote {
+  background: #eee;
+  border: 4px solid #eee;
+  // height: 38px;
+  // width: 38px;
+  margin: 10px 10px 10px 10px;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  // line-height: 38px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
