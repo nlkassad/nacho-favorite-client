@@ -14,9 +14,7 @@ const showReviewsTemplate = require('../templates/review-listing.handlebars');
 
 const success = (data) => {
   if (data) {
-    // console.log(data);
   } else {
-    // console.log('Success');
   }
 };
 
@@ -52,6 +50,12 @@ const signUpSuccess = (data) => {
   $('#entry').html(displaySignIn());
 };
 
+const changePasswordSuccess = (data) => {
+  $('#notification').html("Password Updated, giddyup!");
+  $('#content').html("");
+
+};
+
 const signInSuccess = (data) => {
   app.user = data.user;
   // console.log(app.user);
@@ -81,6 +85,24 @@ const getUsersSuccess = (users) => {
   // console.log(users);
 };
 
+// const clearDisplaySections = (fields) => {
+//   if (fields === "cte") {
+//     $('#entry').html("");
+//     $('#content').html("");
+//   } else if (fields === "all") {
+//     $('#content').html("");
+//     $('#control').html("");
+//     $('#entry').html("");
+//     $('#notification').html("");
+//   } else if (fields === "en") {
+//     $('#entry').html("");
+//     $('#notification').html("");
+//   } else if (fields === "cn") {
+//     $('#content').html("");
+//     $('#notification').html("");
+//   }
+// };
+
 module.exports = {
   success,
   failure,
@@ -91,5 +113,6 @@ module.exports = {
   signInSuccess,
   signUpSuccess,
   signOutSuccess,
-  getUsersSuccess
+  getUsersSuccess,
+  changePasswordSuccess
 };

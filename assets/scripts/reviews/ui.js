@@ -101,7 +101,7 @@ const createMenuItemSuccess = (menu_item) => {
 
 const findReviewSuccess = (review) => {
   // app.user = data.user;
-  // console.log(review);
+  console.log(review);
   $('#content').html(showReview(review));
   $('#entry').html("");
   $('#notification').html("");
@@ -110,15 +110,15 @@ const findReviewSuccess = (review) => {
 const displayEditReviewSuccess = (data) => {
   // app.user = data.user;
   let data_id = data.id;
-  // console.log(data);
-  // console.log(data_id);
+  console.log(data);
+  console.log(data_id);
   $(data).after(displayEditReview({data_id}));
   // $('#entry').html("");
 };
 
 const editReviewSuccess = (review) => {
   // app.user = data.user;
-  // console.log(review);
+  console.log(review);
   $('#notification').html("Review Updated!");
   $('#entry').html("");
   $('#content').html("");
@@ -126,7 +126,7 @@ const editReviewSuccess = (review) => {
 
 const deleteReviewSuccess = (review) => {
   // app.user = data.user;
-  // console.log(review);
+  console.log(review);
   $('#notification').html("Review Deleted!");
   $('#entry').html("");
   $('#content').html("");
