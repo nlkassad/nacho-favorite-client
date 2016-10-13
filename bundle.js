@@ -359,6 +359,7 @@ webpackJsonp([0],[
 	  $('#control').html(signedOut());
 	  $('#entry').html("");
 	  $('#content').html("");
+	  $('#notification').html("");
 	  $('nav').html("Nacho Favorite &#x1f33d; &#x1f9c0;");
 	};
 
@@ -2372,7 +2373,7 @@ webpackJsonp([0],[
 	    + alias4(((helper = (helper = helpers.data_id || (depth0 != null ? depth0.data_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"data_id","hash":{},"data":data}) : helper)))
 	    + " class=\"edit-review\">\n  <fieldset>\n    <legend>Edit This Review</legend>\n    <p>"
 	    + alias4(((helper = (helper = helpers.param || (depth0 != null ? depth0.param : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"param","hash":{},"data":data}) : helper)))
-	    + "</p>\n    <input class=\"vote\" type=\"button\" name=\"1\" value=\"&#x2795;\">\n    <input class=\"vote\" type=\"button\" name='101' value=\"&#x2b55;\">\n    <input class=\"vote\" type=\"button\" name=\"-1\" value=\"&#x2796;\">\n    <input id=\"review-rating\" type=\"hidden\" name=\"review[rating]\" value=\"\">\n    <input type=\"review_note\" name=\"review[note]\" placeholder=\"Enter your new note\">\n    <input type=\"submit\" name=\"submit\" value=\"Update\">\n  </fieldset>\n</form>\n";
+	    + "</p>\n    <input class=\"vote\" type=\"button\" name=\"1\" value=\"&#x1f607;  Fave!\">\n    <input class=\"vote\" type=\"button\" name='101' value=\"&#x1f610;  Meh\">\n    <input class=\"vote\" type=\"button\" name=\"-1\" value=\"&#x1f47f;  No bueno\">\n    <input id=\"review-rating\" type=\"hidden\" name=\"review[rating]\" value=\"\">\n    <input type=\"review_note\" name=\"review[note]\" placeholder=\"Enter your new note\">\n    <input type=\"submit\" name=\"submit\" value=\"Update\">\n  </fieldset>\n</form>\n";
 	},"useData":true});
 
 /***/ },
