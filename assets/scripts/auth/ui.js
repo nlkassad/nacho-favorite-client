@@ -72,6 +72,7 @@ const signOutSuccess = () => {
   $('#control').html(signedOut());
   $('#entry').html("");
   $('#content').html("");
+  $('#notification').html("");
   $('nav').html("Nacho Favorite &#x1f33d; &#x1f9c0;");
 };
 
