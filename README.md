@@ -71,6 +71,12 @@ No tally of review data, also not broken but missing functionality from
 original goals
 content does not display well on mobile view.
 
+## Reference Links
+Client Repo: https://github.com/nlkassad/nacho-favorite-client 
+API Repo: https://github.com/nlkassad/nacho-favorite-rails-api 
+Live Client: https://nlkassad.github.io/nacho-favorite-client/ 
+Live API: https://nacho-favorite-api.herokuapp.com
+
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
