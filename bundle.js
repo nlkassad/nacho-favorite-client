@@ -2002,6 +2002,7 @@ webpackJsonp([0],[
 
 	var displayFindReviewSuccess = function displayFindReviewSuccess() {
 	  $('#entry').html(displayFindReview());
+	  $('#notification').html("");
 	};
 
 	var getReviewsSuccess = function getReviewsSuccess(reviews) {
