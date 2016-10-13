@@ -23,6 +23,7 @@ const displayCreateMenuItemSuccess = () => {
 
 const displayFindReviewSuccess = () => {
   $('#entry').html(displayFindReview());
+  $('#notification').html("");
 };
 
 const getReviewsSuccess = (reviews) => {
