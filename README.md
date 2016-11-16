@@ -7,7 +7,7 @@ my mustache when these forces come together they are to be taken very
 seriously.
 
 You can witness this beauty of this project first hand at the following url:
- https://nlkassad.github.io/tic-tac-toe
+ https://nlkassad.github.io/nacho-favorite-client/
 
 
 ## Planning Resources
