@@ -11,25 +11,29 @@ const displayEditReview = require('../templates/display-edit-review.handlebars')
 const displayCreateMenuItem = require('../templates/display-create-menu-item.handlebars');
 
 
-
+const clearDisplaySections = () => {
+  $('#entry').html("");
+  $('#content').html("");
+  $('#notification').html("");};
 
 const displayCreateNewReviewSuccess = (menu_items) => {
+  clearDisplaySections();
   $('#entry').html(displayCreateNewReview(menu_items));
 };
 
 const displayCreateMenuItemSuccess = () => {
+  clearDisplaySections();
   $('#entry').html(displayCreateMenuItem());
 };
 
 const displayFindReviewSuccess = () => {
+  clearDisplaySections();
   $('#entry').html(displayFindReview());
-  $('#notification').html("");
 };
 
 const getReviewsSuccess = (reviews) => {
+  clearDisplaySections();
   $('#content').html(showReviewsTemplate(reviews));
-  $('#entry').html("");
-  $('#notification').html("");
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
@@ -37,9 +41,9 @@ const getReviewsSuccess = (reviews) => {
 };
 
 const getMenuItemsSuccess = (menu_items) => {
+  clearDisplaySections();
+  console.log(menu_items);
   $('#content').html(showListingTemplate(menu_items));
-  $('#entry').html("");
-  $('#notification').html("");
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
@@ -47,9 +51,8 @@ const getMenuItemsSuccess = (menu_items) => {
 };
 
 const getRestaurantsSuccess = (restaurants) => {
+  clearDisplaySections();
   $('#content').html(showListingTemplate(restaurants));
-  $('#entry').html("");
-  $('#notification').html("");
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
@@ -57,9 +60,8 @@ const getRestaurantsSuccess = (restaurants) => {
 };
 
 const getDishesSuccess = (dishes) => {
+  clearDisplaySections();
   $('#content').html(showListingTemplate(dishes));
-  $('#entry').html("");
-  $('#notification').html("");
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
@@ -67,9 +69,9 @@ const getDishesSuccess = (dishes) => {
 };
 
 const getMyReviewsSuccess = (reviews) => {
+  clearDisplaySections();
+  console.log(reviews);
   $('#content').html(showMyReviewsTemplate(reviews));
-  $('#entry').html("");
-  $('#notification').html("");
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
@@ -77,35 +79,32 @@ const getMyReviewsSuccess = (reviews) => {
 };
 
 const clearReviews = () => {
-  $('#content').html("");
-  $('#entry').html("");
-  $('#notification').html("");
+  clearDisplaySections();
 };
 
 const failure = (error) => {
-  // console.error(error);
+  console.error(error);
 };
 
 const createNewReviewSuccess = (review) => {
   // app.user = data.user;
   // console.log(review);
+  clearDisplaySections();
   $('#notification').html("Review Created" + showNewReview(review));
-  $('#entry').html("");
 };
 
 const createMenuItemSuccess = (menu_item) => {
   // app.user = data.user;
-  // console.log(menu_item);
+  console.log(menu_item);
+  clearDisplaySections();
   $('#notification').html("Menu Item Created");
-  $('#entry').html("");
 };
 
 const findReviewSuccess = (review) => {
   // app.user = data.user;
   console.log(review);
+  clearDisplaySections();
   $('#content').html(showReview(review));
-  $('#entry').html("");
-  $('#notification').html("");
 };
 
 const displayEditReviewSuccess = (data) => {
@@ -120,17 +119,15 @@ const displayEditReviewSuccess = (data) => {
 const editReviewSuccess = (review) => {
   // app.user = data.user;
   console.log(review);
+  clearDisplaySections();
   $('#notification').html("Review Updated!");
-  $('#entry').html("");
-  $('#content').html("");
 };
 
 const deleteReviewSuccess = (review) => {
   // app.user = data.user;
   console.log(review);
+  clearDisplaySections();
   $('#notification').html("Review Deleted!");
-  $('#entry').html("");
-  $('#content').html("");
 };
 
 module.exports = {

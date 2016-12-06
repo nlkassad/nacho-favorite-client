@@ -10,7 +10,11 @@ const signedOut = require('../templates/signed-out.handlebars');
 const showAdminFunctions = require('../templates/show-admin-functions.handlebars');
 const showReviewsTemplate = require('../templates/review-listing.handlebars');
 
-
+const clearSections = () => {
+  $('#entry').html("");
+  $('#content').html("");
+  $('#notification').html("");
+};
 
 const success = (data) => {
   if (data) {
@@ -50,7 +54,7 @@ const signUpSuccess = (data) => {
   $('#entry').html(displaySignIn());
 };
 
-const changePasswordSuccess = (data) => {
+const changePasswordSuccess = () => {
   $('#notification').html("Password Updated, giddyup!");
   $('#content').html("");
 
@@ -70,39 +74,18 @@ const signOutSuccess = () => {
   // console.log('User signed out successfully');
   app.user = null;
   $('#control').html(signedOut());
-  $('#entry').html("");
-  $('#content').html("");
-  $('#notification').html("");
+  clearSections();
   $('nav').html("Nacho Favorite &#x1f33d; &#x1f9c0;");
 };
 
 const getUsersSuccess = (users) => {
+  clearSections();
   $('#content').html(showReviewsTemplate(users));
-  $('#entry').html("");
-  $('#notification').html("");
 
   // $('#content').append(showReviewsTemplate({reviews}));
 
   // console.log(users);
 };
-
-// const clearDisplaySections = (fields) => {
-//   if (fields === "cte") {
-//     $('#entry').html("");
-//     $('#content').html("");
-//   } else if (fields === "all") {
-//     $('#content').html("");
-//     $('#control').html("");
-//     $('#entry').html("");
-//     $('#notification').html("");
-//   } else if (fields === "en") {
-//     $('#entry').html("");
-//     $('#notification').html("");
-//   } else if (fields === "cn") {
-//     $('#content').html("");
-//     $('#notification').html("");
-//   }
-// };
 
 module.exports = {
   success,

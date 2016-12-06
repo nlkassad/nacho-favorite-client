@@ -5,14 +5,16 @@
     <!-- <p>&#x1f607; Damn that's Nachoie!</p>
     <p>	&#x1f610; Meh</p>
     <p>&#x1f47f; Cook's got a chip on their shoulder</p> -->
+    <!-- <select id="menu-field" type="menu_item"> -->
     <select class="menu-item-selector">
+      <option value="null" selected>Select a Menu Item</option>
       {{#each menu_items}}
         <option value={{id}}>{{id}} {{restaurant_id}} {{restaurant.name}} {{dish_id}} {{dish.name}}</option>
       {{/each}}
     </select>
-    <input class="vote" type="button" name="1" value="&#x1f607;  Fave!">
-    <input class="vote" type="button" name='101' value="&#x1f610;  Meh">
-    <input class="vote" type="button" name="-1" value="&#x1f47f;  No bueno">
+    <input class="vote" type="button" name=1 value="&#x1f607;  Fave!">
+    <input class="vote" type="button" name=0 value="&#x1f610;  Meh">
+    <input class="vote" type="button" name=-1 value="&#x1f47f;  No bueno">
     <input id="review-rating" type="hidden" name="review[rating]" value="">
     <input type="note" name="review[note]" placeholder="Enter your note">
     <input id="menu-field" type="menu_item" name="review[menu_item_id]" placeholder="Enter the Menu Item ID">
